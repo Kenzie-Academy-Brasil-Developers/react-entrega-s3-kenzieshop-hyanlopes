@@ -15,7 +15,7 @@ export const addToCartThunk = (product) => {
         }
         localStorage.setItem("cart", JSON.stringify(list))
 
-        dispach(addToCart(product))
+        dispach(addToCart(list))
     }
 }
 export const removeToCartThunk = (product) => {
