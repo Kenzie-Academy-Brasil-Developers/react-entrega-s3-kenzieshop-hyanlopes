@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import { addToCartThunk } from "../../store/modules/Cart/thunk";
 import { Container } from "./style";
 const Product = ({ product }) => {
@@ -12,7 +11,6 @@ const Product = ({ product }) => {
       <button
         onClick={() => {
           dispach(addToCartThunk(product));
-          toast.success("Adicionado com sucesso!");
         }}
       >
         Adicionar ao carrinho

@@ -1,10 +1,18 @@
+import { toast } from "react-toastify"
 import { addToCart, removeToCart } from "./action"
 
 export const addToCartThunk = (product) => {
     return (dispach) => {
 
         const list = JSON.parse(localStorage.getItem("cart")) || []
-        list.push(product);
+
+        const existente = list.find((e) => e.nome === product.nome)
+        if (existente === undefined) {
+            list.push(product)
+            toast.success("Produto adicionado!")
+        } else {
+            toast.error("Produto já adicionado!")
+        }
         localStorage.setItem("cart", JSON.stringify(list))
 
         dispach(addToCart(product))
