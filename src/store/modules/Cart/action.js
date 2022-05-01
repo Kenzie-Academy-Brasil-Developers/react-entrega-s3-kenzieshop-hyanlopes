@@ -1,4 +1,6 @@
 export const addToCart = product => {
-    console.log(product)
     return { type: "@cart/ADD", product }
+}
+export const removeToCart = product => {
+    return { type: "@cart/REMOVE", product }
 }

@@ -15,4 +15,7 @@ export const Container = styled.div`
   p {
     color: #afa3a3;
   }
+  .RemoveCart {
+    cursor: pointer;
+  }
 `;
